@@ -1,0 +1,6 @@
+tests/
+.editorconfig
+.npmignore
+.travis.yml
+appveyor.yml
+CONTRIBUTING.md

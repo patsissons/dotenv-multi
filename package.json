@@ -1,0 +1,105 @@
+{
+  "name": "dotenv-multi",
+  "version": "0.1.0",
+  "description": "dotenv for multiple files based on NODE_ENV",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "lint": "yarn lint:ts",
+    "lint:stats": "yarn lint:ts --format node_modules/eslint-stats/byError.js",
+    "lint:ts": "eslint . --ext .ts --ext .tsx --max-warnings 0 --format codeframe",
+    "postinstall": "yarn build",
+    "pretest": "yarn lint",
+    "pretty": "prettier --write \"**/*.{css,scss,js,json,md,ts,tsx,yml}\"",
+    "test": "",
+    "validate": "yarn lint && tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/patsissons/dotenv-multi.git"
+  },
+  "keywords": [
+    "dotenv",
+    "dotenv-multi",
+    "env",
+    ".env",
+    "environment",
+    "variables",
+    "config",
+    "settings"
+  ],
+  "readmeFilename": "README.md",
+  "license": "MIT",
+  "engines": {
+    "node": ">=6"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.0.0",
+    "@types/jest": "^23.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-typescript": "^7.0.0",
+    "babel-jest": "^24.0.0",
+    "coveralls": "^3.0.0",
+    "eslint": "^5.0.0",
+    "eslint-plugin-shopify": "^26.0.0",
+    "eslint-stats": "^1.0.0",
+    "husky": "^1.0.0",
+    "jest": "^24.0.0",
+    "prettier": "^1.0.0",
+    "pretty-quick": "^1.0.0",
+    "tslib": "^1.0.0",
+    "typescript": "~3.1.0"
+  },
+  "dependencies": {
+    "dotenv": "^6.0.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:shopify/typescript",
+      "plugin:shopify/jest",
+      "plugin:shopify/prettier"
+    ],
+    "rules": {
+      "import/named": "off",
+      "import/no-anonymous-default-export": "off",
+      "import/no-named-as-default": "off",
+      "jsx-a11y/click-events-have-key-events": "off",
+      "jsx-a11y/no-autofocus": "off",
+      "no-empty-pattern": "off",
+      "shopify/jest/no-snapshots": "off",
+      "shopify/strict-component-boundaries": "off"
+    },
+    "overrides": []
+  },
+  "eslintIgnore": [
+    "/.cache",
+    "/lib"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "jest": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-typescript"
+    ],
+    "cacheDirectory": "./.cache",
+    "coverageThreshold": {
+      "global": {
+        "branches": 50,
+        "functions": 50,
+        "lines": 50,
+        "statements": 50
+      }
+    },
+    "globals": {
+      "__TEST__": true
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/test/setup.ts"
+    ]
+  }
+}

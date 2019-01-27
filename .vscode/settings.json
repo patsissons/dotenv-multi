@@ -1,0 +1,15 @@
+{
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": true,
+  "eslint.validate": ["javascript", "typescript"],
+  "editor.rulers": [80],
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "prettier.eslintIntegration": true,
+  "tslint.enable": false,
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "window.title": "${activeEditorMedium}${separator}${rootName}"
+}
